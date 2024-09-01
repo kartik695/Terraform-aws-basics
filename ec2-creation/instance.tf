@@ -82,13 +82,13 @@ EOF
 
   // Remember provisoners are applied to only that resource in which they comes under
   provisioner "local-exec" {
-    when        = "destroy" // when we run terraform destroy it will run (Remember provisoner will run and then resource will be destroy)
+    when        = destroy // when we run terraform destroy it will run (Remember provisoner will run and then resource will be destroy)
     working_dir = "/tmp/"
     command     = "echo ${self.public_ip} > mypublic.txt" // it will execute on my local machine
   }
 
 
-
+// Remember if provisoner gets failed it mark terraform resource as taint-. which means if you apply terraform command next time whole resources will be craeted from scratch
 
 
 
