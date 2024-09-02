@@ -92,6 +92,23 @@ EOF
 
 
 
+provisioner "remote-exec" { // remote exec run command or script on remote server 
+    // inline -> used to provide list of command strings
+    inline = [ 
+     
+
+     ]
+  }
+provisioner "remote-exec" { // remote exec run command or script on remote server 
+  // used to execute script and if you  want to execute scripts and use scripts block 
+  script = ""
+   
+
+
+  }
+
+
+
 
 
 }
@@ -100,6 +117,17 @@ EOF
 
 
 
+// creating instance through modules
+
+# module "mywebserver" {
+#   source = "../../Terraform-Module/webserver"
+#   image_id = "hjsgcdhjsgcgs"
+#   instance_type = "t2.small"
+#   # key = file("${path.module}/id_rsa.pub")
+# }
+
+
+  
 
 
 
